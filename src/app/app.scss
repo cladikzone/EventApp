@@ -1,4 +1,4 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
 
 // App Global Sass
@@ -14,3 +14,193 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Animated css 
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+	border:none;
+}
+.toolbar-background-ios, .button-ios-secondary{
+	&:focus, &:active, &:hover{
+		background: #d26425;
+	}
+	background: #d26425;
+}
+.welcomeslider{
+	background: url(../assets/images/backwelcome.jpg)center center;
+	background-size: cover;
+}
+.section1{
+	position: absolute;
+	height: 100%;
+	padding: 20px;
+	.section1content{
+		margin-top: 20px;
+		color: #fff;
+		p{
+			color: #fff;
+			padding: 0px;
+			b{
+				color: #fff; 
+			}
+		}
+	}
+	.tutorial-page{
+		img.slide-image-sec-1{
+			margin-bottom: 50px;
+			width: 50%;
+		}
+	}
+	.buttonwrapper{
+		margin-top: 10vh;
+		button{
+			background: #680014;
+		}
+	}
+}
+.section2, .sec3, .secFinal{
+	color: #fff;
+	img{
+		width: 45%;
+	}
+	.branch-container{
+		p{
+			color: rgba(255, 255, 255, 0.8);
+			padding: 0px;
+		}
+	}
+	button{
+		&.addbranch{
+			background: #fff;
+			border-radius: 20px;
+			padding: 10px 10px;
+			text-align: center;
+			font-size: 14px;
+			height: 30px;
+			margin-bottom: 20px;
+		}
+		&.continue-btn{
+			font-size: 14px;
+			background: #680014;
+			border-radius: 30px;
+			color: #fff;
+			margin-top: 25px !important;
+		}
+	}
+	ion-list{
+		ion-item{	
+			&.item-ios{
+				background: rgba(255, 255, 255, 0.7);
+				border-radius: 40px;
+    			margin-bottom: 15px;
+			}
+			border:none;
+			border-top: none;
+			.item-inner{
+				border: none;
+				.input-wrapper{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
+.secFinal {
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+	p{
+		color: rgba(255, 255, 255, 0.8)!important;
+		// padding: 0px;
+	}
+}
+
+
+.toolbar-title-ios, 
+.bar-button-default-ios, 
+.bar-button-default.bar-button-ios-default,
+.bar-button-clear-ios-default,
+.text-ios-primary{
+	color: #fff;
+}
+.toolbar .searchbar-ios .searchbar-input {
+	background: #fff;
+	border-radius: 0px;
+}
+
+
+// Inner pages
+.show-page.scroll-content{
+	background: #e4e4e4;
+}

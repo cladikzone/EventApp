@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="notification-page">
+  <ion-card>
+    <img src="assets/images/Asapuwa.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <p>
+        {{item.description}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-center>
+        <a [href]="googleMapdirectionUrl" ion-button clear small color="danger" icon-left>
+          <ion-icon name="navigate"></ion-icon>
+          Location
+        </a>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-left (click)="addToCalendar(item)">
+          <ion-icon name="calendar"></ion-icon>
+          Add to Calendar
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-left (click)="presentActionSheet(item)">
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

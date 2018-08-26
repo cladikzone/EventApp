@@ -1,15 +1,18 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { WelcomeComponent, ModalContentPage } from '../pages/welcome/welcome.component';
+import { CalenderComponent, ModalCalenderContentPage } from '../pages/calender/calender.component';
+import { NotificationComponent } from '../pages/notification/notification.component';
+import { MoreinfoComponent } from '../pages/moreinfo/moreinfo.component';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { WelcomeService } from '../pages/welcome/welcome.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { HttpClient } from './http.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
-  ],
+    TabsPage,
+    WelcomeComponent,
+    ModalContentPage,
+    CalenderComponent,
+    NotificationComponent,
+    MoreinfoComponent,
+    ModalCalenderContentPage
+],
   imports: [
-    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,12 +37,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WelcomeComponent,
+    ModalContentPage,
+    CalenderComponent,
+    NotificationComponent,
+    MoreinfoComponent,
+    ModalCalenderContentPage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WelcomeService, CookieService, HttpClient]
 })
 export class AppModule {}

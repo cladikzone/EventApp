@@ -1,0 +1,89 @@
+.tutorial-page {
+
+  .toolbar-background {
+    background: #fff;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: -2.2rem;
+  }
+
+  .slide-image {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 18px 0;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
+  }
+
+  h4{
+      font-size: 1.7rem;
+  }
+
+  h2{
+      font-size: 1.9rem;
+  }
+
+  .scroll-content{
+      overflow-y: hidden;
+  }
+
+  .branches{
+    height: 22%;
+  }
+
+  .continue-btn{
+    margin-top: -28px !important;
+  }
+
+  .branch-container{
+    margin-left: 49px;
+    margin-right: 49px;
+  }
+
+  .personal-info{
+      margin-top: 30px;
+  }
+
+  ion-item{
+        // .distance{
+        //         font-size: 11px;
+        //         margin-top: 0px;
+        //         margin-left: 6px;
+        //         text-align: right !important;
+        //         // position: absolute;
+        // }
+
+        // .branch-name{
+        //     overflow: visible;
+        // }
+
+        ::-webkit-input-placeholder { font-size: 13px; }
+        ::-moz-placeholder { font-size: 13px; } /* firefox 19+ */
+        :-ms-input-placeholder { font-size: 13px; } /* ie */
+        input:-moz-placeholder { font-size: 13px; }
+  }
+
+  button{
+        // font-size: 12px;
+  }
+
+}

@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Welcome</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="tutorial-page welcomeslider">
+  <ion-slides>
+    <ion-slide *ngFor="let slide of slides">
+      <div class="section1">
+        
+        <!-- <ion-toolbar>
+          <ion-buttons end>
+            <button ion-button color="primary">Skip</button>
+          </ion-buttons>
+        </ion-toolbar> -->
+        <img [src]="slide.image" class="slide-image-sec-1 animated zoomIn"/>
+        <div class="section1content">
+          <h2 class="slide-title animated fadeInUp" [innerHTML]="slide.title"></h2>
+          <p [innerHTML]="slide.description" class="animated fadeInUp"></p>
+        </div>
+        <div class="buttonwrapper  animated fadeInUp">
+          <button ion-button color="secondary" (click)="goToSlide(1)" round>ලියාපදිංචි වන්න</button>
+        </div>
+        <!--<ion-row no-padding>-->
+          <!--<ion-col text-center>-->
+            <!--<button ion-button outline (click)="goToSlide(1)" color="primary">
+              ඇතුල් වන්න
+            </button>-->
+            <!-- <button ion-button color="secondary" (click)="goToSlide(1)" round>ලියාපදිංචි වන්න</button> -->
+            <!--</ion-col>
+            <ion-col>-->
+            <!--<button ion-button outline (click)="goToSlide(1)" color="primary">
+              ලියාපදිංචි වන්න
+            </button>-->
+          <!--</ion-col>
+        </ion-row>-->
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="section2">
+        <img src="assets/images/sectiontwoicon.png" class="slide-image"/>
+        <h4 class="slide-title">අසපු ශාඛාවන් තෝරන්න</h4>
+        <div class="branch-container">
+          <p>
+            මෙමගින් අප ඔබ හට මහමෙවුනාව අසපු ශාඛාවන් වල සිදු කරන්නාවූ සියළු වැඩසටහන් පිලිබදව මතක් කර දීමක් සිදු කරන්නෙමු. ඒ සදහා ඔබට සහභාගී විය හැකි මහමෙවුනාව ශාඛාව හෝ ශාඛාවන් තෝරා දීම කල හැක.
+          </p>
+          <button ion-button clear color="primary" class="addbranch"  (click)="openModal({charNum: 0})">
+            ශාඛාව තෝරන්න
+          </button>
+          <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+          <ion-list>
+            <ion-item *ngFor="let item of nearBranches">
+              <ion-label class="branch-name">{{ item.name }}</ion-label>
+              <ion-label class="distance">120.2Km</ion-label>
+              <ion-toggle disabled checked="true"></ion-toggle>
+            </ion-item>
+          </ion-list>
+        </div>
+        <button ion-button large clear icon-right color="primary" (click)="goToSlide(2)" class="continue-btn">
+          Continue
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="section2 sec3">
+        <img src="assets/images/userinfor.png" class="slide-image"/>
+        <h4 class="slide-title">ඔබගේ තොරතුරු ලබා දෙන්න</h4>
+        <div class="branch-container personal-info">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="mail"></ion-icon>
+              <ion-input type="email" [(ngModel)]="user.email" placeholder="විද්‍යුත් තැපැල් ලිපිනය"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="call"></ion-icon>
+              <ion-input type="tel" [(ngModel)]="user.mobile" placeholder="දුරකථන අංකය"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label style=" font-size: 13px;">දැනුම් දීම් කල යුත්තේ</ion-label>
+              <ion-select [(ngModel)]="user.notifyDates" style=" font-size: 13px;">
+                <ion-option value="1">දින 1 ට පෙර</ion-option>
+                <ion-option value="2">දින 2 ට පෙර</ion-option>
+                <ion-option value="3">දින 3 ට පෙර</ion-option>
+                <ion-option value="4">දින 4 ට පෙර</ion-option>
+                <ion-option value="5">දින 5 ට පෙර</ion-option>
+                <ion-option value="6">දින 6 ට පෙර</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </div>
+        <button ion-button clear icon-right (click)="goToSlide(3)" class="continue-btn">
+          Continue
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="secFinal">
+         <img src="assets/images/mahamevnawa-logo.png" class="slide-image"/>
+          <h2 class="slide-title">නමෝ බුද්ධාය !!!</h2>
+          <p>පින්වත් ඔබ හටත් උතුම් වූ ගෞථම බුදු සසුනේ නිර්මල වූ ශ්‍රී සද්ධර්ම පරිපූර්ණ ලෙස අවබෝද කර ගැනීමට මෙය උපකාරයක්ම වේවා !!!</p>
+          <button ion-button clear icon-right (click)="goToHome()" class="continue-btn">
+            Continue
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
